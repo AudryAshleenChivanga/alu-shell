@@ -1,0 +1,5 @@
+10-mirror_permissions
+
+#!/bin/bash
+chmod --reference=olleh hello
+
