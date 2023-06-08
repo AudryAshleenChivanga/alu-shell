@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#File displaying numbers 1-100
 count=1
 while [ $count -ne 101 ]
 do
