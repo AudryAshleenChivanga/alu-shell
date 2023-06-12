@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+process_list=$(ps -e -o pid,ppid,user,cmd)
+echo "Process List:"
+echo "$process_list"

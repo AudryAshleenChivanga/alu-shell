@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+process_list=$(ps -e | grep bash)
+echo "Process List:"
+echo "$process_list"

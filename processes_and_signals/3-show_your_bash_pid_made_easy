@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+current_pid=$$
+process_list=$(grep -s -l -i "bash" /proc/*/status)
+echo "PID    PROCESS NAME"
+for process_file in $process_list; do
+    pid=$(awk '/^Pid:/ {print $2}' "$process_file")
+    process_name=$(awk '/^Name:/ {print $2}' "$process_file")
+    echo "$pid    $process_name"
+done

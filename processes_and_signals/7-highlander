@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+trap "echo I am invincible!!!" SIGTERM
+stop_process() {
+    pkill -f "4-to_infinity_and_beyond"
+    echo "4-to_infinity_and_beyond process stopped."
+}
+stop_highlander() {
+    pkill -f "7-highlander"
+    echo "7-highlander process stopped."
+}
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done
+script_name=$(basename "$0")
+if [ "$script_name" == "67-stop_me_if_you_can" ]; then
+    stop_highlander
+else
+    stop_process
+fi
