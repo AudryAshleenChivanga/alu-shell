@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Displays a list of currently running processes
 process_list=$(ps -e -o pid,ppid,user,cmd)
 echo "Process List:"
 echo "$process_list"

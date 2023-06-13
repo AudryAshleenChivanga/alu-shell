@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Displays To infinity and beyond indefinitely with a sleep 2in between each iteration 
 trap "echo I am invincible!!!" SIGTERM
 stop_process() {
     pkill -f "4-to_infinity_and_beyond"

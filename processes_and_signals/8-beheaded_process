@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# kills the process 7-highlander.
 pid=$(pgrep -f "7-highlander")
 if [ -n "$pid" ]; then
     echo "Stopping 7-highlander process (PID: $pid)..."

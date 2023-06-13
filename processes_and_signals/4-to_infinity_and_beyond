@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#isplays To infinity and beyond indefinitely.
 trap "echo Exiting...; exit" SIGINT
 while true; do
     echo "To infinity and beyond"
