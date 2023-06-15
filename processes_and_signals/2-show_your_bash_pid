@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 #Displays lines containing the bash word
 # shellcheck disable=SC2009
-process_list=$(ps -e | grep bash)
-echo "Process List:"
-echo "$process_list"
+ps u | grep bash

@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-#isplays To infinity and beyond indefinitely.
-trap "echo Exiting...; exit" SIGINT
-while true; do
-    echo "To infinity and beyond"
-    sleep 2
+#Displays To infinity and beyond indefitely
+while [[ 1 -eq 1 ]]; do
+	echo "To infinity and beyond"
+	sleep 2
 done
