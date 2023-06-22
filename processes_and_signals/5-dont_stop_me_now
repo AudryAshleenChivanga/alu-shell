@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-#Write a Bash script that stops 4-to_infinity_and_beyond process.
-storing_pid={}
-readarray -t storing_pid < < (preg -la -x "bash.*" | grep '4-to_infinity_and_beyond)' | cut -d '' -f 1)
-for( (i=0; i< "$(#storing_pid[0]"; i++) do
-	kill -s SIGTERM "$storing_data[1]}"
-done
+#Write a Bash script that stops 4-to_infinity_and_beyond
+# Finding the process ID of 4-to_infinity_and_beyond
+pid=$(pgrep 4-to_infinity_and_beyond )
+# Kill the process
+  kill "$pid"
