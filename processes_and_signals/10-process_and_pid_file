@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
-#process and pid file
+
+# Process and PID file
 pid_file="/var/run/myscript.pid"
+
 function delete_pidfile () {
-    rm -f $pid_file
+    rm -f "$pid_file"
     exit
 }
-trap "echo I hate the kill command;delete_pifile" SIGTERM
-trap "echo Y U no love me?!;delete_pidfile" SIGINT
-echo $$ >> $pid_file
+
+trap "echo I hate the kill command; delete_pidfile" SIGTERM
+trap "echo Y U no love me?!; delete_pidfile" SIGINT
+
+echo $$ > "$pid_file"
+
 while true; do
-    echo "To infinity and beyond";
-    sleep 2;
+    echo "To infinity and beyond"
+    sleep 2
 done
