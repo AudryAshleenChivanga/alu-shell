@@ -2,7 +2,7 @@
 #process and pid file
 pid_file="/var/run/myscript.pid"
 function delete_pidfile () {
-    rm "$pid_file"
+    rm -f $pid_file
     exit
 }
 trap "echo I hate the kill command" SIGTERM
