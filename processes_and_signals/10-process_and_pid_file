@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-
 # Process and PID file
+#shellcheck disable=SC2009
 pid_file="/var/run/myscript.pid"
 
 function delete_pidfile () {
