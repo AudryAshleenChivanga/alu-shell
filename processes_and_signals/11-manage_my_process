@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-#Manages the file manage my file
+#Manages the file manage my pif
 #shellcheck CS2009
+
 PID_FILE="/var/run/my_process.pid"
-SCRIPT_PATH=/alu-shell/processes_and_signals/manage_my_process
+SCRIPT_PATH="/alu-shell/processes_and_signals/11-manage_my_process/manage_my_process"
 
 start_process() {
     if [ -f "$PID_FILE" ]; then
@@ -45,3 +46,4 @@ case "$1" in
         echo "Usage: manage_my_process {start|stop|restart}"
         ;;
 esac
+
