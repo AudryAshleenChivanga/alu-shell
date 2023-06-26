@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+#Manages the file manage my file
+#shellcheck CS2009
+#!/bin/bash
+
+PID_FILE="/var/run/my_process.pid"
+SCRIPT_PATH="/path/to/manage_my_process"
+
+start_process() {
+    if [ -f "$PID_FILE" ]; then
+        echo "manage_my_process is already running"
+    else
+        "$SCRIPT_PATH" &
+        echo $! > "$PID_FILE"
+        echo "manage_my_process started"
+    fi
+}
+
+stop_process() {
+    if [ -f "$PID_FILE" ]; then
+        pid=$(cat "$PID_FILE")
+        kill $pid
+        rm "$PID_FILE"
+        echo "manage_my_process stopped"
+    else
+        echo "manage_my_process is not running"
+    fi
+}
+
+restart_process() {
+    stop_process
+    start_process
+    echo "manage_my_process restarted"
+}
+
+case "$1" in
+    "start")
+        start_process
+        ;;
+    "stop")
+        stop_process
+        ;;
+    "restart")
+        restart_process
+        ;;
+    *)
+        echo "Usage: manage_my_process {start|stop|restart}"
+        ;;
+esac
